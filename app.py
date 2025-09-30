@@ -76,15 +76,7 @@ def index():
     </body>
     </html>
     """)
-
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(
-        directory="static",
-        path="favicon.ico",
-        mimetype="image/vnd.microsoft.icon"
-    )
-
+    
 # --- REGISTRATSIYA SAHIFASI ---
 @app.route("/registratsiya", methods=["GET", "POST"])
 def registratsiya():
@@ -307,5 +299,5 @@ def favicon():
 
 # --- FLASK RUN RAILWAY UCHUN ---
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
