@@ -77,6 +77,14 @@ def index():
     </html>
     """)
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(
+        directory="static",
+        path="favicon.ico",
+        mimetype="image/vnd.microsoft.icon"
+    )
+
 # --- REGISTRATSIYA SAHIFASI ---
 @app.route("/registratsiya", methods=["GET", "POST"])
 def registratsiya():
